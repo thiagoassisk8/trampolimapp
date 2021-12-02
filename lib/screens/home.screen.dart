@@ -30,7 +30,7 @@ class _HomeState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text('Pokedx'),
+        title: Text('Pokedex'),
       ),
       body: (_isLoading)
           ? Center(
