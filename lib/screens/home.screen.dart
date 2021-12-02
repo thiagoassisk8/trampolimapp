@@ -15,7 +15,7 @@ class _HomeState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    _service.fetchPokemon().then((result) {
+    _service.getPokemons().then((result) {
       _pokemons = result;
       setState(() => _isLoading = false);
     });
@@ -29,21 +29,36 @@ class _HomeState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red,
         title: Text('Pokedx'),
       ),
       body: (_isLoading)
           ? Center(
               child: CircularProgressIndicator(),
             )
-          : ListView.builder(
-              padding: const EdgeInsets.all(8),
+          : GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,
+                  childAspectRatio: MediaQuery.of(context).size.width /
+                      (MediaQuery.of(context).size.height / 5.3)),
               itemCount: _pokemons.length,
-              itemBuilder: (BuildContext context, int index) {
+              itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () => goToDetail(_pokemons[index]),
-                  child: PokemonCard(_pokemons[index]),
+                  child: Card(
+                    child: GridTile(
+                      child: Column(
+                        children: [
+                          PokemonCard(_pokemons[index]),
+                          Image.network(
+                              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png'),
+                        ],
+                      ),
+                    ),
+                  ),
                 );
-              }),
+              },
+            ),
     );
   }
 }

@@ -22,10 +22,11 @@ class _DetailState extends State<DetailsScreen> {
   @override
   void initState() {
     super.initState();
-    _service.getDetail(widget.pokemon['name']).then((value) {
+    _service.getDetails(widget.pokemon['name']).then((value) {
       _detail = value;
+
       getSprites();
-      getDetail();
+      getDetails();
     });
   }
 
@@ -46,7 +47,13 @@ class _DetailState extends State<DetailsScreen> {
         .toList();
   }
 
-  getDetail() {
+  getDetails() {
+    _details.add(Divider(color: Colors.transparent));
+    _details.add(Text(' Informações Gerais', style: TextStyle(fontSize: 17)));
+    _details.add(ListTile(
+      title: Text('Nome'),
+      subtitle: Text(_detail['name'].toString()),
+    ));
     _details.add(ListTile(
       title: Text('Base Experience'),
       subtitle: Text(_detail['base_experience'].toString()),
@@ -68,7 +75,7 @@ class _DetailState extends State<DetailsScreen> {
       subtitle: Text(_detail['species']['name'].toString()),
     ));
     _details.add(Divider());
-    _details.add(ListTile(title: Text('Abilities')));
+    _details.add(ListTile(title: Text('Habilidades')));
     var abilities = <Widget>[];
     _detail['abilities'].forEach((v) {
       abilities.add(Chip(label: Text(v['ability']['name'])));
@@ -79,7 +86,7 @@ class _DetailState extends State<DetailsScreen> {
       children: abilities,
     ));
     _details.add(Divider());
-    _details.add(ListTile(title: Text('Forms')));
+    _details.add(ListTile(title: Text('Formas')));
     var forms = <Widget>[];
     _detail['forms'].forEach((v) {
       forms.add(Chip(label: Text(v['name'])));
@@ -122,7 +129,7 @@ class _DetailState extends State<DetailsScreen> {
       ),
     ));
     _details.add(Divider());
-    _details.add(ListTile(title: Text('Type')));
+    _details.add(ListTile(title: Text('Tipos')));
     var type = <Widget>[];
     _detail['types'].forEach((v) {
       type.add(Chip(label: Text(v['type']['name'])));
@@ -142,6 +149,7 @@ class _DetailState extends State<DetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red,
         title: Text((_isLoading)
             ? widget.pokemon['name'].toUpperCase()
             : '#' +
@@ -166,8 +174,14 @@ class _DetailState extends State<DetailsScreen> {
                             itemBuilder: (BuildContext context, int index) {
                               return Column(
                                 children: [
-                                  Image.network(_sprites[index]['url']),
-                                  Text(_sprites[index]['name'])
+                                  // Text("Sprints"),
+                                  Divider(color: Colors.transparent),
+                                  Chip(
+                                    label: Text(_sprites[index]['name']),
+                                  ),
+                                  // ),
+                                  Image.network(_sprites[index]['url'],
+                                      height: 150, fit: BoxFit.fitWidth),
                                 ],
                               );
                             })),
@@ -176,7 +190,7 @@ class _DetailState extends State<DetailsScreen> {
                   Expanded(
                     child: Container(
                       child: ListView(
-                        padding: const EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(10),
                         children: _details,
                       ),
                     ),

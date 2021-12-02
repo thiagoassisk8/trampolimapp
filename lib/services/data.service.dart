@@ -1,13 +1,14 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const LIMIT = '150';
+const maxlimit = '151';
 const URI = 'pokeapi.co';
+const URIimg = 'raw.githubusercontent.com';
 
 class DataService {
-  Future<List<dynamic>> fetchPokemon() {
+  Future<List<dynamic>> getPokemons() {
     return http
-        .get(Uri.https(URI, 'api/v2/pokemon/', {'limit': LIMIT}))
+        .get(Uri.https(URI, 'api/v2/pokemon/', {'limit': maxlimit}))
         .then((response) {
       var res = json.decode(response.body);
       if (res['results'] != null) {
@@ -17,7 +18,7 @@ class DataService {
     });
   }
 
-  Future<Map> getDetail(String pokemonName) {
+  Future<Map> getDetails(String pokemonName) {
     return http
         .get(Uri.https(URI, 'api/v2/pokemon/${pokemonName}'))
         .then((response) {

@@ -10,6 +10,10 @@ class PokedeskApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: customTheme, routes: Routes.get(), home: Routes.getHome());
+        theme: ThemeData(
+          primaryColor: Colors.red,
+        ),
+        routes: Routes.get(),
+        home: Routes.getHome());
   }
 }
