@@ -50,8 +50,13 @@ class _HomeState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           PokemonCard(_pokemons[index]),
-                          Image.network(
-                              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png'),
+                          FadeInImage.assetNetwork(
+                              image:
+                                  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png",
+                              placeholder:
+                                  "assets/pokeLoad.gif" // your assets image path
+                              //  fit: BoxFit.cover,
+                              )
                         ],
                       ),
                     ),

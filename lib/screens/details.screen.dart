@@ -180,8 +180,14 @@ class _DetailState extends State<DetailsScreen> {
                                     label: Text(_sprites[index]['name']),
                                   ),
                                   // ),
-                                  Image.network(_sprites[index]['url'],
-                                      height: 150, fit: BoxFit.fitWidth),
+                                  FadeInImage.assetNetwork(
+                                      image: _sprites[index]['url'],
+                                      height: 150,
+                                      fit: BoxFit.fitWidth,
+                                      placeholder:
+                                          "assets/pokeLoad.gif" // your assets image path
+
+                                      )
                                 ],
                               );
                             })),

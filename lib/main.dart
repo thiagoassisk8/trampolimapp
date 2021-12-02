@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:trampolimApp/routes.dart';
-import 'package:trampolimApp/theme.dart';
 
 void main() {
   runApp(new PokedeskApp());
