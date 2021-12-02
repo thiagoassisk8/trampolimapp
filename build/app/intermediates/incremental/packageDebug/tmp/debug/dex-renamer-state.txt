@@ -1,4 +1,0 @@
-#Thu Dec 02 10:06:52 BRT 2021
-base.0=/home/thiago/AndroidStudioProjects/pokemon/trampolimapp/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
