@@ -10,14 +10,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeState extends State<HomeScreen> {
   List _pokemons = List();
   DataService _service = DataService();
+  bool _isLoading = true;
 
   @override
   void initState() {
     super.initState();
     _service.fetchPokemon().then((result) {
-      setState(() {
-        _pokemons = result;
-      });
+      _pokemons = result;
+      setState(() => _isLoading = false);
     });
   }
 
@@ -29,19 +29,21 @@ class _HomeState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Teste'),
+        title: Text('Pokedx'),
       ),
-      body: ListView.builder(
-          padding: const EdgeInsets.all(8),
-          itemCount: _pokemons.length,
-          itemBuilder: (BuildContext context, int index) {
-            return GestureDetector(
-              onTap: () {
-                goToDetail(_pokemons[index]);
-              },
-              child: PokemonCard(_pokemons[index]),
-            );
-          }),
+      body: (_isLoading)
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView.builder(
+              padding: const EdgeInsets.all(8),
+              itemCount: _pokemons.length,
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
+                  onTap: () => goToDetail(_pokemons[index]),
+                  child: PokemonCard(_pokemons[index]),
+                );
+              }),
     );
   }
 }
