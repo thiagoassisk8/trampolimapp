@@ -11,7 +11,7 @@
 
 ## Overview
 
-⚠️ *Esse repositório é um app simples que consome que consume a POKEAPI**
+⚠️ *Esse repositório é um app simples que consume a POKEAPI**
 
 Link do APK p/ Download: https://drive.google.com/file/d/1SBivV8SfjbmTJdbKNAEYK3nnGOIevg0M/view?usp=sharing
 
@@ -20,15 +20,11 @@ Link do APK p/ Download: https://drive.google.com/file/d/1SBivV8SfjbmTJdbKNAEYK3
 <img
 		width="210"
 		alt="Capture 1"
-		src="">
+		src="https://github.com/thiagoassisk8/trampolimapp/blob/master/imagens/pokedex1.png">
 <img
 		width="210"
 		alt="Capture 2"
-		src="">
-<img
-		width="210"
-		alt="Capture 3"
-		src="">
+		src="https://github.com/thiagoassisk8/trampolimapp/blob/master/imagens/pokedex2.png">
 
 ## Installation and usage
 
