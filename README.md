@@ -26,9 +26,11 @@ Link do APK p/ Download: https://drive.google.com/file/d/1SBivV8SfjbmTJdbKNAEYK3
 		alt="Capture 2"
 		src="https://github.com/thiagoassisk8/trampolimapp/blob/master/imagens/pokedex2.png">
 
-## Installation and usage
+<img
+		width="210"
+		alt="Capture 3"
+		src="https://github.com/thiagoassisk8/trampolimapp/blob/master/imagens/pokedex3.png">
 
-Esse projeto no momento só está funcionando para android, porém estamos trabalhando para disponibiliza-lo para IOS também
 
 
 ### Running the project
