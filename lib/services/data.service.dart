@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const maxlimit = '151';
+const maxlimit = '152';
 const URI = 'pokeapi.co';
 const URIimg = 'raw.githubusercontent.com';
 

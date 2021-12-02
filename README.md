@@ -1,16 +1,57 @@
-# trampolimApp
+<h1 align="center">
+<h3 align="center">
+	Pokedex Trampolim
+</h3>
 
-Poke dx
 
-## Getting Started
+<p align="center">
+	<img src="https://github.com/thiagoassisk8/pharma_off/blob/master/assets/imagens_demonstracao/Farmacias%20Pr%C3%B3ximas%20mapa.png" width="300">
+</p>
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Overview
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+⚠️ *Esse repositório é um app simples que consome que consume a POKEAPI**
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Link do APK p/ Download: https://drive.google.com/file/d/1SBivV8SfjbmTJdbKNAEYK3nnGOIevg0M/view?usp=sharing
+
+## Imagens
+
+<img
+		width="210"
+		alt="Capture 1"
+		src="">
+<img
+		width="210"
+		alt="Capture 2"
+		src="">
+<img
+		width="210"
+		alt="Capture 3"
+		src="">
+
+## Installation and usage
+
+Esse projeto no momento só está funcionando para android, porém estamos trabalhando para disponibiliza-lo para IOS também
+
+
+### Running the project
+
+Clone esse repositório :
+
+```
+git clone https://github.com/thiagoassisk8/trampolimapp.git
+
+```
+
+Instale os pacotes necessários através do comando :
+
+```
+flutter pub get
+```
+
+Em seguida basta rodar o script no flutter, para o app ser buildado no seu AndroidEmulator
+
+
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
