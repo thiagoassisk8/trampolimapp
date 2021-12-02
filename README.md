@@ -5,7 +5,7 @@
 
 
 <p align="center">
-	<img src="https://github.com/thiagoassisk8/pharma_off/blob/master/assets/imagens_demonstracao/Farmacias%20Pr%C3%B3ximas%20mapa.png" width="300">
+	<img src="https://github.com/thiagoassisk8/trampolimapp/blob/master/imagens/pokedex1.png" width="300">
 </p>
 
 
