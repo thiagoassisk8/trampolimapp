@@ -11,6 +11,7 @@ class PokedeskApp extends StatelessWidget {
     return MaterialApp(
         theme: ThemeData(
           primaryColor: Colors.red,
+          
         ),
         routes: Routes.get(),
         home: Routes.getHome());
